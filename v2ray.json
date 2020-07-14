@@ -19,10 +19,43 @@
       }
     }
   ],
-  "outbounds": [
+   "outbounds": [
     {
       "protocol": "freedom",
-      "settings": {}
+      "settings": {
+        
+      }
+    },
+    {
+      "tag": "VPS1",
+      "protocol": "vmess",
+      "settings": {
+        "vnext": [
+          {
+            "address": "gcp1.jasonhk.top",
+            "port": 36757,
+            "users": [
+              {
+                "id": "be816171-e591-4bfb-a471-62d7bee0344c",
+                "security": "auto",
+                "alterId": 64
+              }
+            ]
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "outboundTag": "VPS1",
+        "domain": [
+          "geosite:netflix"
+        ]
+      }
+    ]
+  }
 }
+
